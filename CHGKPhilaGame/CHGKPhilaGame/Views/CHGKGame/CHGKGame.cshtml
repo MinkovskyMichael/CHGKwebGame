@@ -1,0 +1,110 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Что? Где? Когда?</title>
+    <script src="/Scripts/jquery321.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+    <script src="http://www.youtube.com/player_api"></script>
+    <link href="/Content/font-awesome.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="fixed-top" id="topImage">
+        <img src="/images/chgkTop.jpg" id="imageTop" />
+    </div>
+
+    <div id="VideoDiv" class="">
+    </div>
+
+    <div id="mainGameDiv" class="">
+        <div id="GameMenu" class="alligning">
+            <div class="col-md-12" id="menu">
+                <input value="Старт" type="button" class="btn btn-success col-md-12" onclick="CHGKgames.OpenModal()" />
+                <input value="Правила" type="button" class="btn btn-default col-md-12" onclick="CHGKgames.Rules()" />
+                <input value="Рейтинг" type="button" class="btn btn-default col-md-12" onclick="CHGKgames.Raiting()" />
+                <input value="Кредит" type="button" class="btn btn-default col-md-12" onclick="CHGKgames.Credits()" />
+            </div>
+
+            <div class="col-md-12 text-center" id="display">
+                <p id="text">Hello World!</p>
+                <input value="Меню" type="button" class="btn btn-default col-md-12" onclick="CHGKgames.ToMenu()" />
+            </div>
+
+            <div class="col-md-12" id="gameDisplay">
+                <div class="text-center" id="question">Game Starts here</div>
+                <div>
+                    <input placeholder="Ответ писать сюда" class="form-control" id="answer"/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Modal starts here -->
+
+    <div class="modal fade" id="myMessage" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+
+                <div class="modal-body" style="text-align: center;">
+                    <p>Вы готовы почуствовать себя знатоком</p>
+                    <input type="button" class="btn btn-success col-md-3" style="float: none;" data-dismiss="modal" onclick="CHGKgames.GameStart()" value="Да" />
+                    <input type="button" class="btn btn-danger col-md-3" style="float: none;" data-dismiss="modal" value="Нет" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript'>
+
+        // create youtube player
+        var player;
+
+
+        function onYouTubePlayerAPIReady() {
+            $('#gameDisplay').hide();
+            $('#menu').hide();
+            $('#display').hide();
+            player = new YT.Player('VideoDiv', {
+                height: '500px',
+                width: '100%',
+                videoId: 'R1P1DOOZzCA',
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        // autoplay video
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        // when video ends
+        function onPlayerStateChange(event) {
+            if (event.data === 0) {
+                //document.getElementById("VideoDiv").classList.add('invisibleClass');
+                document.getElementById("GameMenu").classList.remove('invisibleClass');
+                $('#VideoDiv').remove();
+                $('#GameMenu').show();
+                $('#mainGameDiv').show();
+                $('#VideoDiv').hide();
+                $('#display').hide();
+                $('#gameDisplay').hide();
+                $('#menu').show();
+            }
+        }
+    </script>
+    <link href="/Content/custom.css" rel="stylesheet" />
+    <script src="/Scripts/custom.js"></script>
+</body>
+</html>

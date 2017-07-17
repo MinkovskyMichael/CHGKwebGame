@@ -1,0 +1,55 @@
+﻿#topImage{
+    height: 150%;
+}
+.fixed-top {
+z-index: -1 !important;
+}
+
+#imageTop{
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    z-index: -1 !important;
+}
+
+#mainGameDiv{
+    position: absolute;
+    top:41%;
+    border: solid;
+    margin-left: auto;
+    margin-right: auto;
+    left: 15%;
+    right: 15%;
+    height: 450px;
+    width: 1000px;
+}
+
+#VideoDiv {
+ position: absolute;
+    top:41%;
+    border: solid;
+    margin-left: auto;
+    margin-right: auto;
+    left: 15%;
+    right: 15%;
+    width: 1000px;
+}
+
+
+.invisibleClass {
+   display: none
+}
+
+.visible {
+visibility: visible;
+}
+
+.nonVisible {
+visibility: hidden;
+}
+
+.alligning {
+  width: 100%;
+  margin: 0 auto;
+}       
+
