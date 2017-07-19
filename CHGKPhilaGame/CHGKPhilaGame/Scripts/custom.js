@@ -35,6 +35,7 @@ CHGKgames = {
 
     GameStart: function () {
         $('#menu').hide();
-        $('#display').show();
+        $('#gameDisplay').show();
+        $('#question').show();
     },
 }

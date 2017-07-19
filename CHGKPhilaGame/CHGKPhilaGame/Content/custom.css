@@ -51,5 +51,27 @@ visibility: hidden;
 .alligning {
   width: 100%;
   margin: 0 auto;
-}       
+}
 
+#divAnswer {
+    bottom: 0;
+    position: absolute;
+}
+
+#submitAnswer {
+    margin-left: 3px;
+}
+
+.gameDisplay {
+    position: absolute;
+    bottom: 0;
+}
+
+.question {
+    top: 30%;
+    position: absolute;
+    color: rgb(0, 0, 178);
+    font-size: 1.5em;
+    font-style: italic;
+    font-weight: bold;
+}

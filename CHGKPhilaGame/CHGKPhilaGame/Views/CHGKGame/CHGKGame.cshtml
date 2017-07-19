@@ -36,11 +36,11 @@
                 <p id="text">Hello World!</p>
                 <input value="Меню" type="button" class="btn btn-default col-md-12" onclick="CHGKgames.ToMenu()" />
             </div>
-
-            <div class="col-md-12" id="gameDisplay">
-                <div class="text-center" id="question">Game Starts here</div>
-                <div>
-                    <input placeholder="Ответ писать сюда" class="form-control" id="answer"/>
+            <div class="text-center question" id="question">Заниматься ПЕРВЫМ любят многие и нередко тратят на это большие деньги, ВТОРОЕ является одним из способов получения свежей информации, а с помощью ТРЕТЬЕГО некоторые животные оставляют на деревьях и камнях свой индивидуальный запах, сигнализирующий о занятости территории. Что общего между этими тремя занятиями, с точки зрения одного юмориста?</div>
+            <div class="col-md-12 gameDisplay" id="gameDisplay">
+                <div class="form-group col-md-12" id="divAnswer">
+                    <input placeholder="Ответ писать сюда" class="form-control col-md-10" id="answer" style="width: 90%" />
+                    <input type="button" class="btn btn-primary" id="submitAnswer" value="Ответить" />
                 </div>
             </div>
 
@@ -73,6 +73,7 @@
             $('#gameDisplay').hide();
             $('#menu').hide();
             $('#display').hide();
+            $('#question').hide();
             player = new YT.Player('VideoDiv', {
                 height: '500px',
                 width: '100%',
